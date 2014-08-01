@@ -19,7 +19,8 @@ install:
   - pip install dist/*.whl
   - cd ..
 script:
-  - pip install nose
+  - pip install futures mock pycares pycurl
+  - if [ `get_py_digit` == 2 ]; then pip install twisted; fi
   - mkdir tmp_for_test
   - cd tmp_for_test
   - python -m tornado.test.runtests
