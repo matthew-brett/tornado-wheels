@@ -25,8 +25,6 @@ script:
   - cd tmp_for_test
   - python -m tornado.test.runtests
   - cd ..
-  - echo $PWD
-  - ls tornado/dist
 before_deploy: cd tornado/dist
 deploy:
   provider: cloudfiles
