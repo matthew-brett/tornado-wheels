@@ -22,13 +22,13 @@ script:
   - pip install nose
   - mkdir tmp_for_test
   - cd tmp_for_test
-  # Run the tests
+  - python -m tornado.test.runtests
   - cd ..
 before_deploy: cd tornado/dist
 deploy:
   provider: cloudfiles
   username: travis-worker
   api_key:
-    secure: ALZrkCwjz3nY/9GfTNPgVQHUmUpCc5SnZTaqIUlJrhVyOBu6aktXaRmQi+sTXzFn7a/PQsYDnoZ8nibCZ472oUVDGUOSbtjIEkPodU+aisLN2dSLNueQsUU7Dmt0SaeyJVGovzfyUiavIYLuAfOtCfUKrwAsi7XTVNQpdyWCQDs=
+    secure: "JxJFpYAsFzpXznFLHGvB0JTgTlv7K4kzllJuZqboOIMaVWXuvYW/SvxNoMp+guPcgovCNQmLMeYJsbnYAHvFu+cBYrIIYl6mS6zHUSBmvC/VPtSrCmB758bJv7tTIH+aLWm79xrrV7rgEOxOcGuQnhM3ukhKJoDWSSHhBbHlJ+E="
   region: ORD
   container: wheels
